@@ -243,7 +243,7 @@ def check_collision_and_landing(lander: Lander, terrain_pts, pad_rect):
     # We'll approximate by checking feet positions against pad top edge band
     lf, rf = lander.foot_points()
     feet_in_x = (pad_rect.left <= lf[0] <= pad_rect.right) and (pad_rect.left <= rf[0] <= pad_rect.right)
-    feet_on_y = max(lf[1], rf[1]) <= pad_rect.top + 4 and max(lf[1], rf[1]) >= pad_rect.top - 14
+    feet_on_y = max(lf[1], rf[1]) <= pad_rect.top + 10 and max(lf[1], rf[1]) >= pad_rect.top - 14
 
     angle_ok = abs((lander.angle + 360) % 360 - 0) <= MAX_LAND_ANGLE or abs((lander.angle + 360) % 360 - 360) <= MAX_LAND_ANGLE
     vx_ok = abs(lander.vel.x) <= MAX_VX
